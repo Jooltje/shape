@@ -1,0 +1,10 @@
+---
+- name: install xorg
+  apt:
+    name: xorg
+    state: present
+
+- name: install i3
+  apt:
+    name: i3
+    state: present
