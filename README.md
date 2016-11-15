@@ -19,7 +19,7 @@ sudo sh /media/cdrom/VBoxLinuxAdditions.run
 ```
 sudo apt-get install ansible git openssh-server
 ssh-keygen
-ssh-copy-id -i .ssh/id_rsa.pub debain-vm
+ssh-copy-id -i .ssh/id_rsa.pub debian-vm
 git clone https://github.com/Jooltje/shape.git
 cd shape
 ansible-playbook -bK -i production site.yml
