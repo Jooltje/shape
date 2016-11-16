@@ -11,8 +11,27 @@
     state: present
   become: yes
 
-- name: create i3 directory
+- name: i3 directory
   file: path=~/.config/i3 state=directory
 
-- name: configure i3
+- name: i3 config
   template: src=templates/i3/config dest=~/.config/i3/config
+
+- name: i3status directory
+  file: path=~/.config/i3status state=directory
+
+- name: i3status config
+  template: src=templates/i3status/config dest=~/.config/i3status/config
+
+- name: install firefox
+  apt:
+    name: firefox-esr
+    state: present
+  become: yes
+
+- name: install rxvt-unicode
+  apt:
+    name: rxvt-unicode
+    state: present
+  become: yes
+
