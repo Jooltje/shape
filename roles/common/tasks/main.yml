@@ -2,8 +2,10 @@
 - name: update
   apt:
     update_cache: yes
+  become: yes
 
 - name: bash completion
   apt:
     name: bash-completion
     state: present
+  become: yes

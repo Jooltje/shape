@@ -3,8 +3,16 @@
   apt:
     name: xorg
     state: present
+  become: yes
 
 - name: install i3
   apt:
     name: i3
     state: present
+  become: yes
+
+- name: create i3 directory
+  file: path=~/.config/i3 state=directory
+
+- name: configure i3
+  template: src=templates/i3/config dest=~/.config/i3/config
